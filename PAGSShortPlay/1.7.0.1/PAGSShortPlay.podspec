@@ -34,7 +34,7 @@ Pod::Spec.new do |s|
 
   # Core subspec，提供基础 framework + bundle + 公共依赖
   s.subspec 'Core' do |ss|
-    ss.vendored_frameworks = ['SDK/PAGSShortPlay.xcframework']
+    ss.vendored_frameworks = 'SDK/PAGSShortPlay.xcframework'
     ss.resources = ['SDK/PAGSShortPlay.bundle/**']  # 确保包含 bundle 内全部文件
     ss.dependency 'AFNetworking', '~> 4.0'
     ss.dependency 'YYModel', '~> 1.0'
