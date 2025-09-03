@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "PAGSShortPlay"
-  s.version      = "1.7.0.0"
+  s.version      = "1.7.0.1"
   s.summary      = "Short drama SDK built for overseas."
   s.description  = "Short drama SDK built for overseas."
   s.homepage     = "https://github.com/gjw1024630744/PAGSShortPlay"
@@ -30,7 +30,7 @@ Pod::Spec.new do |s|
   s.requires_arc = true
 
   # 默认 subspec
-  s.default_subspec = 'premium'
+  s.default_subspec = 'standard'
 
   # Core subspec，提供基础 framework + bundle + 公共依赖
   s.subspec 'Core' do |ss|
