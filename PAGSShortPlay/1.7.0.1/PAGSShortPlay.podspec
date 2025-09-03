@@ -23,6 +23,7 @@ Pod::Spec.new do |s|
     'GCC_OPTIMIZATION_LEVEL[config=Release][sdk=*][arch=*]' => 'z',
     'ASSETCATALOG_COMPILER_OPTIMIZATION' => 'space',
     'CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES' => 'YES',
+		'INFOPLIST_FILE' => '', 
     'CODE_SIGNING_ALLOWED' => 'NO',
     'VALID_ARCHS' => 'x86_64 arm64'
   }
@@ -35,7 +36,7 @@ Pod::Spec.new do |s|
   # Core subspec，提供基础 framework + bundle + 公共依赖
   s.subspec 'Core' do |ss|
     ss.vendored_frameworks = 'SDK/PAGSShortPlay.xcframework'
-    ss.resources = ['SDK/PAGSShortPlay.bundle/**']  # 确保包含 bundle 内全部文件
+    ss.resources = ['SDK/PAGSShortPlay.bundle']
     ss.dependency 'AFNetworking', '~> 4.0'
     ss.dependency 'YYModel', '~> 1.0'
     ss.dependency 'SDWebImage', '~> 5.12'
