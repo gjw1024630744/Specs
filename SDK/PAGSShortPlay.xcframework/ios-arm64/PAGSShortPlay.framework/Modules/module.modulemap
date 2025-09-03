@@ -1,0 +1,6 @@
+framework module PAGSShortPlay {
+  umbrella header "PAGSShortPlay.h"
+
+  export *
+  module * { export * }
+}

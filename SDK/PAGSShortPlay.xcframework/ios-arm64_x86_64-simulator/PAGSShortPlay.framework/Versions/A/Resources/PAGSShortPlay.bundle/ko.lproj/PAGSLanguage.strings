@@ -1,0 +1,21 @@
+/* 
+  PAGSLanguage.strings
+
+  Created by zth on 2024/08/14.
+  Copyright © 2024 bytedance. All rights reserved.
+*/
+
+// String
+
+"pags_detail_desc" = "%@ | 총%lld화";
+"pags_detail_title" = "제%lld화";
+"pags_process_state_end" = "완결";
+"pags_process_state_not_end" = "미완결";
+"pags_video_error" = "영상   불러오기 실패";
+"pags_click_retry" = "다시   시작하기";
+"pags_load_fail" = "불러오기   실패";
+
+
+
+
+// Icon

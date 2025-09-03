@@ -1,0 +1,17 @@
+/* 
+  PAGSLanguage.strings
+
+  Created by zth on 2024/08/14.
+  Copyright © 2024 bytedance. All rights reserved.
+*/
+
+// String
+
+"pags_detail_desc" = "%@ | 共%lld集";
+"pags_detail_title" = "第%lld集";
+"pags_process_state_end" = "已完結";
+"pags_process_state_not_end" = "未完结";
+"pags_video_error" = "視頻加載失敗";
+"pags_click_retry" = "點擊重試";
+"pags_load_fail" = "加載失敗";
+// Icon
