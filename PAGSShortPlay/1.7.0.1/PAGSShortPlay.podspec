@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'PAGSShortPlay'
-  s.version         = '1.7.0.1'
+  s.version         = '1.7.0.2'
   s.summary          = 'Ads-Global is a SDK from Bytedance providing union AD service.'
   s.description      = <<-DESC
   Ads-Global provides ADs which include native、banner、RewardVideo、FullscreenVideo etc.
