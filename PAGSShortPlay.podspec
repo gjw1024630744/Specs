@@ -7,9 +7,9 @@ Pod::Spec.new do |s|
   s.description  = <<-DESC
   Short drama sdk built for overseas.
                     DESC
-  s.homepage     = "https://github.com/bytedance/Bytedance-UnionAD.git"
+  s.homepage     = "https://github.com/gjw1024630744/PAGSShortPlaySpecs.git"
   s.license          = { :type => 'MIT', :file => 'SDK/LICENSE'}
-  s.authors      = { "zhangtianhao" => "zhangtianhao.1230@bytedance.com"}
+  s.authors      = { "gjw1024630744" => "1024630744@qq.com"}
   s.platform     = :ios, "12.0"
   s.source       = { :http => "https://sf16-fe-tos-sg.i18n-pglstatp.com/obj/bu-rely-framework-sg/shortplay/1.7.0.0/SDK.zip" }
   s.frameworks = "UIKit", "CoreFoundation", "WebKit", "StoreKit", "CoreServices", "MediaPlayer", "CoreMedia", "AVFoundation", "CoreTelephony", "SystemConfiguration", "AdSupport", "CoreMotion", "Accelerate"
