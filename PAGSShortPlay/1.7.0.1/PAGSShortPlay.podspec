@@ -35,11 +35,12 @@ Pod::Spec.new do |s|
 
   # Core subspec，提供基础 framework + bundle + 公共依赖
   s.subspec 'Core' do |ss|
-    ss.vendored_frameworks = 'SDK/PAGSShortPlay.xcframework'
-    ss.resources = Dir['SDK/PAGSShortPlay.bundle/**'].reject { |f| f.end_with?('Info.plist') }
-    ss.dependency 'AFNetworking', '~> 4.0'
-    ss.dependency 'YYModel', '~> 1.0'
-    ss.dependency 'SDWebImage', '~> 5.12'
+		ss.vendored_frameworks = ['SDK/PAGSShortPlay.xcframework']
+		ss.preserve_paths = 'SDK/PAGSShortPlay.xcframework'
+		ss.resource = 'SDK/PAGSShortPlay.bundle'
+    ss.dependency 'AFNetworking','>= 4.0.0'
+    ss.dependency 'YYModel','>= 1.0.1'
+    ss.dependency 'SDWebImage','>= 5.12.0'
   end
 
   # 标准版 subspec
