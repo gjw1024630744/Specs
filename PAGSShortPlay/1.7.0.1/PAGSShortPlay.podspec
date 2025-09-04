@@ -24,6 +24,21 @@ Pod::Spec.new do |s|
   s.weak_frameworks = 'AppTrackingTransparency'
 
   s.default_subspec = ['standard']
+	
+	# 配置
+	s.pod_target_xcconfig = {
+	  'OTHER_LDFLAGS' => '-ObjC',
+	  'COMPILER_INDEX_STORE_ENABLE' => 'NO',
+	  'LLVM_LTO[config=Debug][sdk=*][arch=*]' => 'NO',
+	  'LLVM_LTO[config=Release][sdk=*][arch=*]' => 'NO',
+	  'GCC_OPTIMIZATION_LEVEL[config=Debug][sdk=*][arch=*]' => '0',
+	  'GCC_OPTIMIZATION_LEVEL[config=Release][sdk=*][arch=*]' => 'z',
+	  'ASSETCATALOG_COMPILER_OPTIMIZATION'=>'space',
+	  'CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES'=>'YES',
+	  'CODE_SIGNING_ALLOWED' => 'NO',
+	  'VALID_ARCHS' => 'x86_64 arm64'
+	  ###symolocation，don't delete
+	}
   
 	# Core subspec，提供基础 framework + bundle + 公共依赖
   s.subspec 'Core' do |ss|
