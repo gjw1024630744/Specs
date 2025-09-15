@@ -14,7 +14,7 @@ Pod::Spec.new do |s|
   PAGSShortPlay provides ADs which include native、banner、RewardVideo、FullscreenVideo etc.
                        DESC
 
-  s.license          = { :type => 'MIT', :file => 'SDK/LICENSE' }
+  s.license          = { :type => 'MIT', :file => 'PAGSShortPlay/LICENSE' }
   s.author           = { 'gjw1024630744' => '1024630744@qq.com' }
   s.homepage     = "https://github.com/gjw1024630744/Specs"
 	s.source   = { :git => 'https://github.com/gjw1024630744/IOSSDK.git', :tag => '1.7.0.1' }
@@ -42,9 +42,9 @@ Pod::Spec.new do |s|
   
 	# Core subspec，提供基础 framework + bundle + 公共依赖
   s.subspec 'Core' do |ss|
-		ss.vendored_frameworks = ['SDK/PAGSShortPlay.xcframework']
-		ss.preserve_paths = 'SDK/PAGSShortPlay.xcframework'
-		ss.resource = 'SDK/PAGSShortPlay.bundle'
+		ss.vendored_frameworks = ['PAGSShortPlay/PAGSShortPlay.xcframework']
+		ss.preserve_paths = 'PAGSShortPlay/PAGSShortPlay.xcframework'
+		ss.resource = 'PAGSShortPlay/PAGSShortPlay.bundle'
   end
   
   # 标准版 subspec
