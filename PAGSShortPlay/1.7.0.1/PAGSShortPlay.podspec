@@ -16,8 +16,8 @@ Pod::Spec.new do |s|
 
   s.license          = { :type => 'MIT', :file => 'SDK/LICENSE' }
   s.author           = { 'gjw1024630744' => '1024630744@qq.com' }
-  s.homepage     = "https://github.com/gjw1024630744/PAGSShortPlaySpecs"
-	s.source   = { :git => 'https://github.com/gjw1024630744/PAGSShortPlayIOSSDK.git', :tag => '1.7.0.1' }
+  s.homepage     = "https://github.com/gjw1024630744/Specs"
+	s.source   = { :git => 'https://github.com/gjw1024630744/IOSSDK.git', :tag => '1.7.0.1' }
   s.platform         = :ios, "12.0"
 	s.frameworks = "UIKit", "CoreFoundation", "WebKit", "StoreKit", "CoreServices", "MediaPlayer", "CoreMedia", "AVFoundation", "CoreTelephony", "SystemConfiguration", "AdSupport", "CoreMotion", "Accelerate"
 	s.libraries = 'z', 'bz2', 'resolv.9', 'c++', 'sqlite3', 'xml2', 'c++abi'

@@ -11,8 +11,8 @@ Pod::Spec.new do |s|
 
   s.license          = { :type => 'MIT', :file => 'SDK/LICENSE' }
   s.author           = { 'gjw1024630744' => '1024630744@qq.com' }
-  s.homepage         = "https://github.com/gjw1024630744/PAGSShortPlaySpecs"
-  s.source           = { :git => 'https://github.com/gjw1024630744/PAGSShortPlayIOSSDK.git', :tag => '1.0.0' }
+  s.homepage         = "https://github.com/gjw1024630744/Specs"
+  s.source           = { :git => 'https://github.com/gjw1024630744/IOSSDK.git', :tag => '1.0.0.0' }
   s.platform         = :ios, "16.0"
 
   # Google Maps SDK 所需系统 frameworks
