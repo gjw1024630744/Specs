@@ -9,7 +9,7 @@ Pod::Spec.new do |s|
   into GoogleMaps.xcframework, no extra setup required.
   DESC
 
-  s.license          = { :type => 'MIT', :file => 'SDK/LICENSE' }
+  s.license          = { :type => 'MIT', :file => 'GoogleMaps/LICENSE' }
   s.author           = { 'gjw1024630744' => '1024630744@qq.com' }
   s.homepage         = "https://github.com/gjw1024630744/Specs"
   s.source           = { :git => 'https://github.com/gjw1024630744/IOSSDK.git', :tag => '1.0.0.0' }
