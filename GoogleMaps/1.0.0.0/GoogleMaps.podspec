@@ -2,39 +2,33 @@ Pod::Spec.new do |s|
   s.name             = 'GoogleMaps'
   s.version          = '1.0.0.0'
   s.summary          = 'Google Maps SDK for iOS packaged as a CocoaPod.'
-  s.description      = <<-DESC
-  Google Maps SDK for iOS provides map rendering, geolocation,
-  and related services as a single XCFramework + resources bundle.
-  From v9.2.0, GoogleMapsCore and GoogleMapsBase have been merged
-  into GoogleMaps.xcframework, no extra setup required.
-  DESC
+  s.description      = 'Google Maps SDK for iOS XCFramework + Resources.'
 
-  s.license          = { :type => 'MIT', :file => 'GoogleMaps/LICENSE' }
+  s.license          = { :type => 'MIT' }
   s.author           = { 'gjw1024630744' => '1024630744@qq.com' }
   s.homepage         = "https://github.com/gjw1024630744/Specs"
   s.source           = { :git => 'https://github.com/gjw1024630744/IOSSDK.git', :tag => s.version.to_s }
   s.platform         = :ios, "16.0"
 
+  # vendored frameworks + 资源
+  s.vendored_frameworks = "GoogleMaps/GoogleMaps.xcframework"
+  s.resources           = "GoogleMaps/GoogleMapsResources/GoogleMaps.bundle"
+
   # 系统 frameworks
-  s.frameworks       = [
+  s.frameworks = [
     "Accelerate", "Contacts", "CoreData", "CoreGraphics", "CoreImage",
     "CoreLocation", "CoreTelephony", "CoreText", "GLKit", "ImageIO",
     "Metal", "MetricKit", "OpenGLES", "QuartzCore", "Security",
-    "SystemConfiguration", "UIKit",
-    "GoogleMaps"  # 👈 加上 GoogleMaps 本身
+    "SystemConfiguration", "UIKit"
   ]
 
   # 系统库
-  s.libraries        = "c++", "z"
+  s.libraries = "c++", "z"
 
-  # 编译配置
+  # 强制指定链接方式
   s.pod_target_xcconfig = {
-    "OTHER_LDFLAGS" => "-ObjC -framework GoogleMaps",
-    "CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES" => "YES"
+    "OTHER_LDFLAGS" => "$(inherited) -ObjC -framework GoogleMaps -lc++ -lz",
+    "CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES" => "YES",
+    "FRAMEWORK_SEARCH_PATHS" => "$(inherited) $(PODS_ROOT)/GoogleMaps"
   }
-
-  # 引入 vendored framework + 资源
-  s.vendored_frameworks = "GoogleMaps/GoogleMaps.xcframework"
-  s.resources           = "GoogleMaps/GoogleMapsResources/GoogleMaps.bundle"
-  s.preserve_paths      = "GoogleMaps/GoogleMaps.xcframework"
 end
