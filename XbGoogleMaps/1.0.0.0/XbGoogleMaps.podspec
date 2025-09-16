@@ -1,5 +1,5 @@
 Pod::Spec.new do |s|
-  s.name             = "GoogleMaps" # Give your pod a descriptive name
+  s.name             = "XbGoogleMaps" # Give your pod a descriptive name
   s.version          = "1.0.0.0" # Match the version of the SDK you downloaded
   s.summary          = "Google Maps SDK for iOS hosted on GitHub." # A brief description
   s.description      = <<-DESC
