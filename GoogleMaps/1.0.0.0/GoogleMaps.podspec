@@ -1,46 +1,27 @@
 Pod::Spec.new do |s|
-  s.name            = 'GoogleMaps'
-  s.version         = '1.0.0.0'
-  s.summary         = 'Google Maps SDK for iOS packaged as a CocoaPod.'
-  s.description     = 'Google Maps SDK for iOS XCFramework + Resources.'
+  s.name             = "GoogleMaps" # Give your pod a descriptive name
+  s.version          = "1.0.0.0" # Match the version of the SDK you downloaded
+  s.summary          = "Google Maps SDK for iOS hosted on GitHub." # A brief description
+  s.description      = <<-DESC
+                       This is a custom Podspec for the Google Maps SDK for iOS,
+                       allowing integration from a GitHub repository.
+                       DESC
+  s.homepage         = "https://github.com/gjw1024630744/Specs" # Replace with the URL of your GitHub repo
+  s.license          = { :type => "See Google Maps SDK for iOS license", :file => "LICENSE" } # Include the license file if you have it
+  s.author           = { "gjw1024630744" => "1024630744@qq.com" } # Replace with your name and email
+  s.source           = { :git => "https://github.com/gjw1024630744/IOSSDK.git", :tag => "#{s.version}" } # Point to your GitHub repo and tag
 
-  s.license          = { :type => 'MIT' }
-  s.author           = { 'gjw1024630744' => '1024630744@qq.com' }
-  s.homepage     = "https://github.com/gjw1024630744/Specs"
-	s.source   = { :git => 'https://github.com/gjw1024630744/IOSSDK.git', :tag => s.version.to_s }
-  s.platform         = :ios, "16.0"
-	s.frameworks = "Accelerate", "Contacts", "CoreData", "CoreGraphics", "CoreImage",
-    "CoreLocation", "CoreTelephony", "CoreText", "GLKit", "ImageIO",
-    "Metal", "MetricKit", "OpenGLES", "QuartzCore", "Security",
-    "SystemConfiguration", "UIKit"
-	s.libraries = 'z', 'bz2', 'resolv.9', 'c++', 'sqlite3', 'xml2', 'c++abi'
-  s.weak_frameworks = 'AppTrackingTransparency'
+  s.ios.deployment_target = '16.0' # Or your minimum iOS deployment target
 
-  s.default_subspec = ['standard']
-	
-	# 配置
-	s.pod_target_xcconfig = {
-	  'OTHER_LDFLAGS' => '-ObjC',
-	  'COMPILER_INDEX_STORE_ENABLE' => 'NO',
-	  'LLVM_LTO[config=Debug][sdk=*][arch=*]' => 'NO',
-	  'LLVM_LTO[config=Release][sdk=*][arch=*]' => 'NO',
-	  'GCC_OPTIMIZATION_LEVEL[config=Debug][sdk=*][arch=*]' => '0',
-	  'GCC_OPTIMIZATION_LEVEL[config=Release][sdk=*][arch=*]' => 'z',
-	  'ASSETCATALOG_COMPILER_OPTIMIZATION'=>'space',
-	  'CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES'=>'YES',
-	  'CODE_SIGNING_ALLOWED' => 'NO',
-	  'VALID_ARCHS' => 'x86_64 arm64'
-	}
-  
-	# Core subspec，提供基础 framework + bundle + 公共依赖
-  s.subspec 'Core' do |ss|
-		ss.vendored_frameworks = ['GoogleMaps/GoogleMaps.xcframework']
-		ss.preserve_paths = 'GoogleMaps/GoogleMaps.xcframework'
-		ss.resource = 'GoogleMaps/GoogleMapsResources/GoogleMaps.bundle'
-  end
-  
-  # 标准版 subspec
-  s.subspec 'standard' do |ss|
-    ss.dependency 'GoogleMaps/Core'
-  end
+  # This is the crucial part for linking the library and frameworks
+  s.vendored_frameworks = 'GoogleMaps/GoogleMaps.xcframework' # Path to the GoogleMaps.xcframework within your repo
+  s.resources = 'GoogleMaps/GoogleMapsResources/GoogleMaps.bundle' # Path to the GoogleMaps.bundle within your repo
+
+  # List the required system frameworks and libraries as specified in the Google documentation
+  s.frameworks = 'Accelerate', 'Contacts', 'CoreData', 'CoreGraphics', 'CoreImage', 'CoreLocation', 'CoreTelephony', 'CoreText', 'GLKit', 'ImageIO', 'Metal', 'MetricKit', 'OpenGLES', 'QuartzCore', 'Security', 'SystemConfiguration', 'UIKit'
+  s.libraries = 'c++', 'bz2', 'resolv.9', 'sqlite3', 'xml2', 'z' # Note: Some libraries might be .tbd in newer SDKs, adjust as needed
+
+  # Add the -ObjC linker flag
+  s.user_target_xcconfig = { 'OTHER_LDFLAGS' => '-ObjC' }
+
 end
