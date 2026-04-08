@@ -47,7 +47,7 @@ Pod::Spec.new do |s|
 		ss.vendored_frameworks = ['PAGSShortPlay/PAGSShortPlay.xcframework']
 		ss.preserve_paths = 'PAGSShortPlay/PAGSShortPlay.xcframework'
 		ss.resource = 'PAGSShortPlay/PAGSShortPlay.bundle'
-		ss.dependency 'AFNetworking','>= 4.0.0'
+		ss.dependency 'AFNetworking'
 		ss.dependency 'YYModel','>= 1.0.1'
 		ss.dependency 'SDWebImage','>= 5.12.0'
   end
